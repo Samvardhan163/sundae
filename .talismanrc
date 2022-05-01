@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: package-lock.json
+  checksum: 3654c49b21dde3e8b7554b062e66473f480f82ac544d4f278bb4b9add1941b6b
+version: ""
