@@ -1,9 +1,9 @@
 import axios from "axios";
 import ScoopOptions from "./ScoopOptions";
 import { useEffect, useState } from "react";
-
+import { Row } from "react-bootstrap";
 export default function Options({ optionType }) {
-  const [item, SetItem] = useState();
+  const [items, SetItem] = useState([]);
   useEffect(() => {
     axios.get(`http://localhost:3030/${optionType}`).then((response) => {
       SetItem(response.data);
@@ -11,11 +11,21 @@ export default function Options({ optionType }) {
   }, [optionType]);
 
   const ItemComponent = optionType === "scoops" ? ScoopOptions : null;
-  const options = item.map((item) => (
+  // const options = items.map((item) => (
+  //   <ItemComponent
+  //     key={item.name}
+  //     name={item.name}
+  //     imagePath={item.imagePath}
+  //   />
+  // ));
+
+  const options = items.map((item) => (
     <ItemComponent
       key={item.name}
       name={item.name}
       imagePath={item.imagePath}
-    ></ItemComponent>
+    />
   ));
+
+  return <Row>{options}</Row>;
 }
