@@ -2,7 +2,7 @@ import axios from "axios";
 import ScoopOptions from "./ScoopOptions";
 import { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
-import toppingsOptions from "./test/toppingsOptions";
+import toppingsOptions from "./toppingsOptions";
 export default function Options({ optionType }) {
   const [items, SetItem] = useState([]);
   useEffect(() => {

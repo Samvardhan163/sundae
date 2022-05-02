@@ -19,4 +19,6 @@ test("display image from each toppings option from the server", async () => {
   });
 
   expect(toppingsImage).toHaveLength(2);
+  const altText = toppingsImage.map((element) => element.alt);
+  expect(altText).toEqual(["honey toppings", "gems toppings"]);
 });
